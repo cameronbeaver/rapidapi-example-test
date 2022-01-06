@@ -1,29 +1,22 @@
 const users = 
-[
-  {
-    "email": "melissa.fleming@example.com",
-    "phone_number": "0740-304-475",
-    "location": {
-      "street": "3655 manchester road",
-      "city": "winchester",
-      "state": "berkshire",
-      "postcode": "YB2 8EJ"
-    },
-    "first_name": "melissa",
-    "last_name": "fleming"
-  },
-  {
-    "email": "christoffer.christiansen@example.com",
-    "phone_number": "05761325",
-    "location": {
-      "street": "3391 pilevangen",
-      "city": "overby lyng",
-      "state": "danmark",
-      "postcode": 88520
-    },
-    "first_name": "christoffer",
-    "last_name": "christiansen"
-  }
-]
+import java.io.File;  // Import the File class
+import java.io.FileNotFoundException;  // Import this class to handle errors
+import java.util.Scanner; // Import the Scanner class to read text files
 
+public class ReadFile {
+  public static void main(String[] args) {
+    try {
+      File myObj = new File("copper.txt");
+      Scanner myReader = new Scanner(myObj);
+      while (myReader.hasNextLine()) {
+        String data = myReader.nextLine();
+        System.out.println(data);
+      }
+      myReader.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }
+}
 module.exports = users;
