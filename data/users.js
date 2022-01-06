@@ -1,3 +1,8 @@
 const users = 
-      {"Hello World"}
+      [
+            {
+                  "Hello World"
+            }
+         ]
+
 module.exports = users;
